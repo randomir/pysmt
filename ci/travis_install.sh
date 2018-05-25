@@ -20,17 +20,17 @@ if [ "${TRAVIS_PULL_REQUEST}" == "false" ] && [ "${TRAVIS_BRANCH}" != "master" ]
     fi
 fi
 
-pip install six
-pip install cython;
+python -m pip install six
+python -m pip install cython;
 
 if [ "${PYSMT_SOLVER}" == "all" ] || [ "${PYSMT_SOLVER}" == "btor" ];
 then
-    pip install python-coveralls;
+    python -m pip install python-coveralls;
 fi
 
 if [ "${PYSMT_GMPY}" == "TRUE" ];
 then
-    pip install gmpy2;
+    python -m pip install gmpy2;
 fi
 
 # Adding Python 3.6 library path to GCC search
@@ -60,4 +60,10 @@ then
     python install.py --msat --conf --force;
     cp -v $(find ~/.smt_solvers/ -name mathsat -type f) pysmt/test/smtlib/bin/mathsat;
     mv pysmt/test/smtlib/bin/mathsat.solver.sh.template pysmt/test/smtlib/bin/mathsat.solver.sh ;
+fi
+
+
+# On OSX install nosetest
+if [ "${TRAVIS_OS_NAME}" == "osx" ]; then
+    python -m pip install nose
 fi

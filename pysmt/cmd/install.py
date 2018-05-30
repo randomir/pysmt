@@ -229,9 +229,13 @@ def main():
             else:
                 print("set PYTHONPATH=" + bindings_dir + ";%PYTHONPATH%")
                 print("set PATH=" + bindings_dir + ";%PATH%")
+        elif platform.system().lower() == "darwin":
+            print("export PYTHONPATH=\"" + bindings_dir + ":${PYTHONPATH}\"")
+            print("export PATH=\"" + bindings_dir + ":${PATH}\"")
         else:
             print("export PYTHONPATH=\"" + bindings_dir + ":${PYTHONPATH}\"")
             print("export LD_LIBRARY_PATH=\"" + bindings_dir + ":${LD_LIBRARY_PATH}\"")
+
 
     else:
         if len(solvers_to_install) == 0:

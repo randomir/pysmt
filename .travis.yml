@@ -109,26 +109,26 @@ matrix:
   #   language: generic
   #   python: 3.6
   #   env: PYSMT_SOLVER="None"      PYSMT_GMPY="FALSE"   PYSMT_CYTHON="FALSE"   TRAVIS_PYTHON_VERSION="3.6.5"
-  # - os: osx
-  #   osx_image: xcode9.3
-  #   language: generic
-  #   python: 3.6
-  #   env: PYSMT_SOLVER="msat"      PYSMT_GMPY="FALSE"   TRAVIS_PYTHON_VERSION="3.6.5"
   - os: osx
     osx_image: xcode9.3
     language: generic
     python: 3.6
-    env: PYSMT_SOLVER="z3"        PYSMT_GMPY="FALSE"   TRAVIS_PYTHON_VERSION="3.6.5"
+    env: PYSMT_SOLVER="msat"      PYSMT_GMPY="FALSE"   TRAVIS_PYTHON_VERSION="3.6.5"
+  # - os: osx
+  #   osx_image: xcode9.3
+  #   language: generic
+  #   python: 3.6
+  #   env: PYSMT_SOLVER="z3"        PYSMT_GMPY="FALSE"   TRAVIS_PYTHON_VERSION="3.6.5"
   # - os: osx
   #   osx_image: xcode9.3
   #   language: generic
   #   python: 3.6
   #   env: PYSMT_SOLVER="cvc4"      PYSMT_GMPY="FALSE"   TRAVIS_PYTHON_VERSION="3.6.5"
-  # - os: osx
-  #   osx_image: xcode9.3
-  #   language: generic
-  #   python: 3.6
-  #   env: PYSMT_SOLVER="yices"     PYSMT_GMPY="FALSE"   TRAVIS_PYTHON_VERSION="3.6.5"
+  - os: osx
+    osx_image: xcode9.3
+    language: generic
+    python: 3.6
+    env: PYSMT_SOLVER="yices"     PYSMT_GMPY="FALSE"   TRAVIS_PYTHON_VERSION="3.6.5"
   # - os: osx
   #   osx_image: xcode9.3
   #   language: generic
